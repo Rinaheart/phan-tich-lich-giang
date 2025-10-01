@@ -1,1 +1,139 @@
+diff --git a//dev/null b/index.html
+index 0000000000000000000000000000000000000000..54ec03f32f541074a4eb16a0f1f48a45236d5acf 100644
+--- a//dev/null
++++ b/index.html
+@@ -0,0 +1,133 @@
++<!DOCTYPE html>
++<html lang="vi">
++<head>
++  <meta charset="UTF-8" />
++  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
++  <title>Timetable Analyzer</title>
++  <link rel="stylesheet" href="style.css" />
++</head>
++<body>
++  <header class="app-header">
++    <div class="brand">Timetable Analyzer</div>
++    <div class="actions">
++      <input type="file" id="fileInput" accept=".html,.htm" hidden />
++      <button id="uploadBtn" class="primary">Tải file HTML</button>
++      <button id="resetBtn" class="ghost">Reset</button>
++      <button id="exportJsonBtn" class="ghost" disabled>Xuất JSON</button>
++      <button id="exportCsvBtn" class="ghost" disabled>Xuất CSV</button>
++      <button id="printBtn" class="ghost" disabled>In PDF</button>
++      <button id="themeToggle" class="ghost" aria-label="Chuyển theme">Dark</button>
++    </div>
++  </header>
++
++  <div id="alertBar" class="alert hidden" role="status">
++    <div class="alert-text"></div>
++    <div class="alert-actions">
++      <button class="ghost" id="jumpToCurrentWeek">Xem tuần này</button>
++      <button class="ghost" id="dismissAlert">Đóng</button>
++    </div>
++  </div>
++
++  <main>
++    <section class="controls">
++      <label>
++        Tuần
++        <select id="weekSelect" disabled></select>
++      </label>
++      <label>
++        Chọn ngày
++        <input type="date" id="datePicker" disabled />
++      </label>
++      <label class="search-label">
++        Tìm kiếm
++        <input type="search" id="searchInput" placeholder="Tìm tên học phần, mã lớp, phòng, GV…" disabled />
++      </label>
++      <label>
++        Giảng viên
++        <select id="teacherFilter" disabled>
++          <option value="">Tất cả</option>
++        </select>
++      </label>
++      <label>
++        Tên HP
++        <select id="courseFilter" disabled>
++          <option value="">Tất cả</option>
++        </select>
++      </label>
++      <label>
++        Mã lớp
++        <select id="codeFilter" disabled>
++          <option value="">Tất cả</option>
++        </select>
++      </label>
++      <label>
++        Phòng
++        <select id="roomFilter" disabled>
++          <option value="">Tất cả</option>
++        </select>
++      </label>
++      <label>
++        Buổi
++        <select id="sessionFilter" disabled>
++          <option value="">Tất cả</option>
++          <option value="morning">Sáng</option>
++          <option value="afternoon">Chiều</option>
++          <option value="evening">Tối</option>
++        </select>
++      </label>
++      <label class="toggle">
++        <input type="checkbox" id="colorToggle" disabled />
++        <span>Tô màu theo mã lớp</span>
++      </label>
++      <label class="toggle">
++        <input type="checkbox" id="clashToggle" disabled />
++        <span>Phát hiện trùng tiết</span>
++      </label>
++    </section>
++
++    <section class="tabs">
++      <button class="tab active" data-tab="week">Tuần</button>
++      <button class="tab" data-tab="day">Ngày</button>
++      <button class="tab" data-tab="semester">Toàn kỳ</button>
++    </section>
++
++    <section id="viewWeek" class="view active"></section>
++    <section id="viewDay" class="view"></section>
++    <section id="viewSemester" class="view"></section>
++  </main>
++
++  <aside id="detailPanel" class="detail-panel" aria-hidden="true">
++    <button id="closeDetail" class="ghost close-detail" aria-label="Đóng">×</button>
++    <div class="detail-content">
++      <h2 id="detailTitle"></h2>
++      <dl>
++        <div><dt>Mã lớp</dt><dd id="detailCode"></dd></div>
++        <div><dt>Nhóm / Lớp</dt><dd id="detailGroup"></dd></div>
++        <div><dt>Tiết</dt><dd id="detailPeriods"></dd></div>
++        <div><dt>Phòng</dt><dd id="detailRoom"></dd></div>
++        <div><dt>Giảng viên</dt><dd id="detailTeacher"></dd></div>
++        <div><dt>Liên kết</dt><dd id="detailLink"></dd></div>
++      </dl>
++      <button id="copyDetail" class="primary">Sao chép</button>
++    </div>
++  </aside>
++
++  <div id="toastContainer" class="toast-container"></div>
++
++  <div id="dropOverlay" class="drop-overlay hidden">
++    <div class="drop-message">Thả file HTML lịch giảng vào đây</div>
++  </div>
++
++  <template id="cardTemplate">
++    <article class="class-card">
++      <header class="class-card-title"></header>
++      <div class="class-card-code"></div>
++      <div class="class-card-period"></div>
++      <div class="class-card-room"></div>
++      <div class="class-card-teacher"></div>
++    </article>
++  </template>
++
++  <script src="script.js"></script>
++</body>
++</html>
 
