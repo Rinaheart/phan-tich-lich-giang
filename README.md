@@ -16,6 +16,10 @@
 - 🌗 **Chuyển đổi giao diện sáng/tối**: tùy chỉnh theme để phù hợp môi trường làm việc.
 
 ## 🚀 Bắt đầu nhanh
+### 🌐 Dùng trực tuyến
+- Truy cập phiên bản GitHub Pages tại: [https://cdythue.github.io/timetable-cdythue/](https://cdythue.github.io/timetable-cdythue/).
+
+### 🖥️ Chạy cục bộ
 1. Mở file `index.html` trong trình duyệt hiện đại (Chrome, Edge, Firefox, …).
 2. Nhấn **Tải file HTML** hoặc kéo thả tệp lịch giảng vào khu vực màn hình.
 3. Chờ hệ thống phân tích dữ liệu. Các bộ lọc và tab sẽ tự động được kích hoạt.
@@ -24,7 +28,7 @@
 6. Sau khi hoàn tất, có thể xuất dữ liệu ra JSON, CSV hoặc sử dụng nút In PDF.
 
 ## 🛠️ Phát triển
-Dự án được xây dựng bằng HTML, CSS và JavaScript thuần (`script.js`). Không cần cài đặt phụ thuộc; chỉ cần mở trực tiếp file `index.html` trên trình duyệt để phát triển và kiểm thử.
+Dự án được xây dựng bằng HTML, CSS và JavaScript thuần (`script.js`) với sự hỗ trợ từ ChatGPT 5 trong quá trình phát triển. Không cần cài đặt phụ thuộc; chỉ cần mở trực tiếp file `index.html` trên trình duyệt để phát triển và kiểm thử.
 
 ## 🤝 Đóng góp
 - Tạo issue nếu bạn phát hiện lỗi hoặc cần thêm tính năng.
